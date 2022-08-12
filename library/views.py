@@ -13,18 +13,15 @@ def home(request):
 def index(request):
     return render(request, 'index.html', {})
 
-def add_book(request):
-    if request.method == "POST":
-        name = request.POST['name']
-        author = request.POST['author']
-        isbn = request.POST['isbn']
-        category = request.POST['category']
- 
-        books = Book.objects.create(name=name, author=author, isbn=isbn, category=category)
-        books.save()
-        alert = True
-        return render(request, "add_book.html", {'alert':alert})
-    return render(request, "add_book.html")
+def Add_book_view(request):
+    form = Add_book(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form = Add_book(request.POST)
+    context = {
+        "form" : form
+     }
+    return render(request,"add_book.html",context)
 
 def view_books(request):
     books = Book.objects.all()
@@ -35,9 +32,9 @@ def view_students(request):
     return render(request, "view_students.html", {'students':students})
 
 def issue_book(request):
-    form = form.IssueBookForm()
+    form = IssuedBookForm()
     if request.method == "POST":
-        form = forms.IssueBookForm(request.POST)
+        form = IssuedBookForm(request.POST)
         if form.is_valid():
             obj = models.IssuedBook()
             obj.student_id = request.POST['name2']
@@ -70,7 +67,7 @@ def profile(request):
     return render(request, "profile.html")
 
 def edit_profile(request):
-    student = Student.objects.get(user=request.user)
+    student = Student.objects.get(user=request.user.id)
     if request.method == "POST":
         email = request.POST['email']
         phone = request.POST['phone']
@@ -88,3 +85,53 @@ def edit_profile(request):
         alert = True
         return render(request, "edit_profile.html", {'alert':alert})
     return render(request, "edit_profile.html")
+
+def Add_students_view(request):
+    form = Add_Student(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form = Add_Student()
+    context = {
+        "form" : form
+    }
+    return render(request,"add_student.html",context)
+
+def registeruser(request):
+    form = RegisterForm()
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('login')
+    else:
+        form = RegisterForm()
+    return render(request, 'register.html', {'form':form})
+
+def loginUser(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        if username and password:
+
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Invalid login Bambi.., PLIZ GO BACK AND FIRST REGISTER')
+    else:
+        messages.error(request, 'Complete the fields')
+
+    return render(request, 'login.html', {})
+
+def logoutUser(request):
+    logout(request)
+    return redirect('home')
+
+
+def StudentDelete(request, pk):
+    obj = get_object_or_404(Student, pk=pk)
+    obj.delete()
+    return redirect('index')
