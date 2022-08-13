@@ -46,18 +46,16 @@
                 <th>Author</th>
                 <th>ISBN Number</th>
                 <th>Category</th>
-                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
-            {% for book in books %}
+            {% for book in Books %}
             <tr>
                 <td>{{forloop.counter}}.</td>
-                <td>{{book.name}}</td>
-                <td>{{book.author}}</td>
-                <td>{{book.isbn}}</td>
-                <td>{{book.category}}</td>
-                <td><a href="/delete_book/{{book.id}}/" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this book?')">Delete</a></td>
+                <td>{{Books.name}}</td>
+                <td>{{Books.author}}</td>
+                <td>{{Books.isbn}}</td>
+                <td>{{Books.category}}</td>
             </tr>
             {% endfor %}
         </tbody>
