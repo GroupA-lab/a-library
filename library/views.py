@@ -116,7 +116,7 @@ def loginUser(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        if Username and password:
+        if username and password:
 
             User = authenticate(username=username, password=password)
 
