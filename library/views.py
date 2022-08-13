@@ -6,6 +6,8 @@ from django.template import loader
 from .forms import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.contrib.auth.models import User
+
 
 
 def index(request):
