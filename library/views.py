@@ -106,7 +106,7 @@ def registeruser(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
+        return redirect('login')
     else:
         form = RegisterForm()
     return render(request, 'register.html', {'form':form})
@@ -122,7 +122,7 @@ def loginUser(request):
 
             if user is not None:
                 login(request, user)
-                return redirect('index')
+            return redirect('index')
         else:
             messages.error(request, 'Invalid login Bambi.., PLIZ GO BACK AND FIRST REGISTER')
     else:
