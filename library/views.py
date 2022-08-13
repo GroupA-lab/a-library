@@ -7,11 +7,13 @@ from .forms import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
-def home(request):
-    return render(request, 'home.html', {})
 
 def index(request):
     return render(request, 'index.html', {})
+
+def home(request):
+    return render(request, 'home.html', {})
+
 
 def Add_book_view(request):
     form = Add_book(request.POST or None)
@@ -118,7 +120,7 @@ def loginUser(request):
 
             if user is not None:
                 login(request, user)
-            return redirect('home')
+            return redirect('index')
         else:
             messages.error(request, 'Invalid login Bambi.., PLIZ GO BACK AND FIRST REGISTER')
     else:

@@ -52,11 +52,13 @@
 	<body>
 	
 	<header id="fh5co-header" style="background-image: url(static/library/images/book.jpg)">
-		<div class="overlay"></div>
+		<div class="overlay"> <h1><a href="{% url 'register' %}">Register</a></h1><br><br>
+			<h1><a href="{% url 'login' %}">Login</a></h1>
+		</div>
 		<div class="container">
 			<div class="row" style="margin-top: 5em;">
 				<div class="col-md-12 text-center">
-					<h1 id="fh5co-logo" class="cursive-font"><a href="home.html">WELCOME {{user.name}} TO CAMPUSS LIBRARIES BY GROUP A.</a></h1>
+					<h1 id="fh5co-logo" class="cursive-font"><a href="home.html">WELCOME TO the landing page of  CAMPUSS LIBRARIES BY GROUP A.</a></h1>
 				</div>
 			</div>
 			<div class="row">
