@@ -100,7 +100,7 @@ def Add_students_view(request):
     }
     return render(request,"add_student.html",context)
 
-def registeruser(request):
+def registerUser(request):
     form = RegisterForm()
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -116,12 +116,12 @@ def loginUser(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        if username and password:
+        if Username and password:
 
-            user = authenticate(username=username, password=password)
+            User = authenticate(username=username, password=password)
 
-            if user is not None:
-                login(request, user)
+            if User is not None:
+                login(request, User)
             return redirect('index')
         else:
             messages.error(request, 'Invalid login Bambi.., PLIZ GO BACK AND FIRST REGISTER')
