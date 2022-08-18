@@ -21,7 +21,7 @@ body {
   font-size: 16px;
   line-height: 1.8;
   color: #7f7f7f;
-  background: #fff;
+  background: #d0c7e4;
   height: 100%;
   position: relative;
 }
@@ -49,30 +49,30 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 ::-webkit-selection {
-  color: #fff;
+  color: #4063c5;
   background: #52d3aa;
 }
 
 ::-moz-selection {
-  color: #fff;
+  color: #823bdf;
   background: #52d3aa;
 }
 
 ::selection {
-  color: #fff;
+  color: rgb(189, 58, 58);
   background: #52d3aa;
 }
 
 #fh5co-logo {
   text-transform: uppercase;
-  color: #fff;
+  color: rgb(212, 204, 204);
   margin-bottom: 10px;
   line-height: 1.5;
 }
 #fh5co-logo a {
-  color: #fff;
+  color: #b41414;
   padding: 10px 40px;
-  font-size: 58px;
+  font-size: 16px;
 }
 #fh5co-logo a:hover, #fh5co-logo a:active, #fh5co-logo a:focus {
   text-decoration: none;
@@ -141,7 +141,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-header .intro h2 {
   font-size: 24px;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.95);
+  color: #72a78ef2;
   margin-bottom: 3em;
 }
 @media screen and (max-width: 480px) {
@@ -150,13 +150,13 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 #fh5co-header .intro a {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(77, 41, 175, 0.95);
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
 #fh5co-header .intro a:hover {
-  color: white;
+  color: rgb(66, 21, 138);
   text-decoration: none;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #dbc7d6;
 }
 @media screen and (max-width: 768px) {
   #fh5co-header .intro a {
@@ -174,7 +174,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
 }
 #fh5co-header .intro .btn:hover {
-  background: #fff !important;
+  background: #b4c795 !important;
   color: #000;
 }
 #fh5co-header .intro .btn .price {
@@ -247,10 +247,10 @@ h1, h2, h3, h4, h5, h6, figure {
 
 .fh5co-testimonial {
   padding: 7em 0;
-  background: #f2f2f2;
+  background: #020e35;
 }
 .fh5co-testimonial .review i {
-  color: #d9d9d9;
+  color: hsl(198, 22%, 85%);
 }
 .fh5co-testimonial .review i.colored {
   color: #FFC12D;
@@ -370,7 +370,7 @@ h1, h2, h3, h4, h5, h6, figure {
   height: 54px;
   border: none !important;
   background: #52d3aa;
-  color: #fff;
+  color: rgb(33, 151, 145);
   font-size: 16px;
   text-transform: uppercase;
   font-weight: 400;
@@ -478,7 +478,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background: #000;
 }
 #get-subscribe .btn:hover, #get-subscribe .btn:active, #get-subscribe .btn:focus {
-  background: #fff;
+  background: #9092b6;
   color: #000;
 }
 
@@ -551,7 +551,7 @@ h1, h2, h3, h4, h5, h6, figure {
   height: 90px;
   font-size: 40px;
   line-height: 40px;
-  color: #fff;
+  color: rgb(148, 9, 9);
 }
 #features .feature-center p, #features .feature-center h3 {
   margin-bottom: 10px;
