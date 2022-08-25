@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>librarian</title>
+    <style>
+        .container{
+            text-align: center;
+        }
+
+        button {
+            display:block;
+            border:solid white;
+            border-width: 0 1px;
+            border-radius: 7px;
+            background-color: rgb(119, 15, 50);
+            color:white;
+            font-size: 15px;
+            font-color:white;
+            
+            padding:15px;
+        }
+        .text {
+            
+            color: 15px;
+            
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="{% static 'library/images/favicon.ico' %}">
+
+</head>
+<body style="background-color: aqua;">
+    <center>
+    <h1>welcome Dear Librarian .</h1>
+    <ol>
+    <li><button type="button"><a href="{% url 'add book url' %}">Add Book</a><br><br><br></button></li>
+    <li><button type="button"><a href="{% url 'add student url' %}">Add student</a><br><br></button></li>
+    <li><button type="button"><a href="{% url 'issue_book' %}">issue book</a><br><br></button></li>
+    <li><button type="button"><a href="{% url 'edit_profile' %}">Edit student profile</a><br><br></button></li>
+    <li><button type="button"><a href="{% url 'view_books' %}">available books</a><br><br></button></li>
+    <li><button type="button"><a href="{% url 'home' %}">Landing Page</a><br><br></button></li>
+    <li><button type="button"><a href="{% url 'index' %}">Home Page</a><br><br></button></li>
+    <li><button type="button"><a href="{% url 'profile' %}">Student Profiles</a><br><br><br></button></li>
+    </ol>
+    </center>
+</body>
+</html>

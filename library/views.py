@@ -70,6 +70,9 @@ def view_issued_book(request):
 def profile(request):
     return render(request, "profile.html")
 
+def admin_home(request):
+    return render(request, "admin_home.html")
+
 def edit_profile(request):
     student = Student.objects.get(user=request.user.id)
     if request.method == "POST":
@@ -130,12 +133,29 @@ def loginUser(request):
 
     return render(request, 'login.html', {})
 
-def logoutUser(request):
+def Logout(request):
     logout(request)
-    return redirect('home')
+    return redirect ("index")
 
 
 def StudentDelete(request, pk):
     obj = get_object_or_404(Student, pk=pk)
     obj.delete()
     return redirect('index')
+
+def admin_login(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            if request.user.is_superuser:
+                return redirect("/admin_home")
+            else:
+                return HttpResponse("You are not an admin.")
+        else:
+            alert = True
+            return render(request, "admin_login.html", {'alert':alert})
+    return render(request, "admin_login.html")

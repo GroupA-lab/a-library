@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import index, Add_book_view, Add_students_view, view_books, view_students, issue_book, view_issued_book, profile, edit_profile, registerUser, loginUser
+from .views import index, Add_book_view, admin_home, Add_students_view, view_books, view_students, issue_book, view_issued_book, profile, edit_profile, registerUser, loginUser, admin_login
 
 
 urlpatterns = [
@@ -17,9 +17,10 @@ urlpatterns = [
     path('register/', views.registerUser, name="register"),
     #path("change_password/", views.change_password, name="change_password"),
     path('login/', views.loginUser, name="login"),
-    #path("admin_login/", views.admin_login, name="admin_login"),
-    #path("logout/", views.Logout, name="logout"),
- 
+    path("admin_login/", views.admin_login, name="admin_login"),
+    path("logout/", views.Logout, name="logout"),
+    path("admin_home/", views.admin_home, name="admin_home"),
+
     #path("delete_book/<int:myid>/", views.delete_book, name="delete_book"),
     #path("delete_student/<int:myid>/", views.delete_student, name="delete_student"),
 ]
