@@ -159,3 +159,22 @@ def admin_login(request):
             alert = True
             return render(request, "admin_login.html", {'alert':alert})
     return render(request, "admin_login.html")
+
+def borrow_book_view(request, std_number, bk_id ):
+    notify()
+    book_being_borrowed = Books.objects.get( id = bk_id )
+    borrowing_student = Std_model.objects.get( personal_No = std_number)
+    if (not book_being_borrowed.availability):
+        return HttpResponse("<h1>Book already Booked or reserved</h1>")
+    else:
+        try:
+            Borrowedbooks(bks_id = book_being_borrowed, std_number = borrowing_student, borrow_date = dt.datetime.now().date()).save()
+            try:
+                book_being_borrowed.availability = False
+                book_being_borrowed.save()
+                Borrowedbooks(bks_id = book_being_borrowed, std_number = borrowing_student, borrow_date = dt.datetime.now().date()).save()
+            except:
+                pass
+            return HttpResponse(f"<h1>You have succeesfully borrowed {book_being_borrowed.book_title}</h1>")
+        except:
+            return HttpResponse("<h1>One can only borrow one book at time</h1>")

@@ -26,15 +26,7 @@ body {
   position: relative;
 }
 
-.container {
-  background-color: white;
-  margin: 12px;
-  margin-top: 10%;
-  font-family: 'Poppins', sans-serif;
-  border-radius: 5px;
-  width: 400px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
+
 a {
   color: #52d3aa;
   -webkit-transition: 0.5s;

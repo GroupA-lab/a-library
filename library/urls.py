@@ -21,6 +21,6 @@ urlpatterns = [
     path("logout/", views.Logout, name="logout"),
     path("admin_home/", views.admin_home, name="admin_home"),
 
-    #path("delete_book/<int:myid>/", views.delete_book, name="delete_book"),
+    # path("delete_book/<int:myid>/", views.delete_book, name="delete_book"),
     #path("delete_student/<int:myid>/", views.delete_student, name="delete_student"),
 ]
