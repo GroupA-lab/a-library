@@ -37,28 +37,59 @@
     <style>
         .container{
             text-align: center;
+            margin: 12px;
+            margin-top: 10;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 5px;
+            width: 600px;
+            box-shadow: rgba(99, 99, 99, 99)0px 2px 8px 0px;
+            background-color: rgb(34, 158, 131);
+            background: rgba(255, 255, 255, 0.3) ;
+            -moz-box-align: center;
         }
+        .body1{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-image: url('./static/library/images/book11.jpg');
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            width: 100;
+        }
+       .btn{
+        font-size: large;
+        padding: 5px;
+        width: 20%;
+        border-radius: 15px;
+        background-image: linear-gradient(140deg, rgb(0, 255, 213), rgb(0, 128, 64));
+        margin-top: 15px;
+        font-family: 'Courier New', Courier, monospace;
+        color: white;
+        box-shadow: rgba(0, 0, 0, 26);
+       }
      
     </style>
 </head>
+<div class="body1">
 <body style="background-image: url('{% static 'library/images/hero_bg_1.jpg'%}');">
-    <div class="body-top">
-</body>
-</html>
+    <div class="container">
 
-<html>
-    <head>
-        <title>
-            add book
-        </title>
-    </head>
-    <body>
+
+
+
+        
+
         <h1> Add your books here!!!.</h1>
         <form action="." method=POST>
             {{ form.as_p }}{% csrf_token%}<br>
-            <input type = submit value = "Add it.">
+            <input class="btn" type = submit value = "Add it.">
         </form>
+        </div>
     </body>
+</div>
 </html>
 
 {% endblock %}

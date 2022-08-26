@@ -3,7 +3,8 @@
 {% block title %} Elibrary{% endblock %}
 {% block css %}
 {% endblock %}
-{% block body %}<!DOCTYPE html>
+{% block body %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,10 +37,46 @@
     <style>
         .container{
             text-align: center;
+            background-color: white;
+            margin: 12px;
+            margin-top: 10%;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 5px;
+            width: 400px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         }
+
+        .body1 {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 800%;
+        background-image: linear-gradient(145deg, blue, purple);
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .btn-field {
+        font-size: large;
+        padding: 10px;
+        width: 86%;
+        text-align: justify;
+        border-radius: 10px;
+        border: 0px;
+        background-image: linear-gradient(145deg, rgb(91, 202, 17), rgb(51, 167, 119));
+        margin: 0px 0px 20px 15px;
+        color: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+ 
      
     </style>
 </head>
+<div class="body1">
 <body style="background-image: url('{% static 'library/images/hero_bg_1.jpg'%}');">
     <div class="container">
         <h1>Login</h1>
@@ -55,10 +92,13 @@
             {{message}}
             {% endfor %} <br><br>
             
-            <input type="submit" value="login">
+            <div class="btn">
+            <input class="btn-field" type="submit" value="login">
+        </div>
         </form>
     </div>
 </body>
+</div>
 </html>
 
 {% endblock %}
