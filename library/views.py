@@ -7,6 +7,11 @@ from .forms import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib.auth.admin import UserAdmin as AuthUserAdmin
+
+
+
+
 
 
 
@@ -41,8 +46,6 @@ def issue_book(request):
         form = IssuedBookForm(request.POST)
         if form.is_valid():
             obj = models.IssuedBook()
-            obj.student_id = request.POST['name2']
-            obj.isbn = request.POST['isbn2']
             obj.save()
             alert = True
             return render(request, "issue_book.html", {'obj':obj, 'alert':alert})
@@ -104,7 +107,7 @@ def Add_students_view(request):
     return render(request,"add_student.html",context)
 
 def registerUser(request):
-    form = RegisterForm()
+    form = RegisterForm
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
