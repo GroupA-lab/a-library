@@ -1,4 +1,9 @@
+{% extends 'basic.html' %}
 {% load static %}
+{% block title %} Elibrary{% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +13,31 @@
     <title>Issue Book page</title>
     <style>
         .container{
+            background-repeat: no-repeat;
             text-align: center;
+            text-align: center;
+            margin: 12px;
+            margin-top: 10;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 5px;
+            width: 600px;
+            box-shadow: rgba(99, 99, 99, 99)0px 2px 8px 0px;
+            background-color: rgb(34, 158, 131);
+            background: rgba(255, 255, 255, 0.3) ;
         }
 
-        .body-top {
+           .btn{
+        
+        padding: 5px;
+        margin: 10;
+        border-radius: 0px;
+        margin-top: 15px;
+        box-shadow: rgba(0, 0, 0, 26);
+       }
+
+        body{
+            background-repeat: no-repeat;
+            background-position: center;
             position: absolute;
             z-index: 0;
             top: 0;
@@ -21,6 +47,7 @@
             align-items: center;
             flex-direction: column;
             width: 100%;
+            
 
         }
     </style>
@@ -46,13 +73,15 @@
 	<link rel="shortcut icon" href="{% static 'library/images/favicon.ico' %}">
 
 	<!-- <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'> -->
-	<link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
-    <body style="background-image: url('{% static 'library/images/book.jpg'%}');"></body>
+
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+<div class="container">
+    <body style="background-image: url('{% static 'library/images/book.jpg'%}');">
 
     <div class="row">
  
 
-    <div class="container mt-4">
+    <div class="container">
     <form method="POST"> {% csrf_token %}
         {% for i in form %}
         <div class="form-group">
@@ -63,6 +92,11 @@
            </div>
         </div>
         {% endfor %}
+        <div class="btn>">
     <button type="submit" class="btn btn-outline-primary mt-4">Issue Book</button>
+        </div>
 </div>
 </form>
+</body>
+</div>
+{% endblock %}

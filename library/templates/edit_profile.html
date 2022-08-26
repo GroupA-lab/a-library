@@ -1,3 +1,9 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %} Elibrary{% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
 <div class="container">
     <form method="POST"> {% csrf_token %}
 <div class="row mt-4">
@@ -31,3 +37,5 @@
     <button type="submit" class="btn btn-secondary mt-5">Update Profile</button>
 </form>
 </div>
+
+{% endblock %}
